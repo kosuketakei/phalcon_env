@@ -1,0 +1,7 @@
+{
+    "name": "php7-phalcon3.4.5/devtools",
+    "description": "This is for installation of phalcon-devtools",
+    "require": {
+        "phalcon/devtools":  "3.4.12"
+    }
+}
