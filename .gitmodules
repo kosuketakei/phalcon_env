@@ -1,0 +1,4 @@
+[submodule "phalcon-project/invo"]
+	path = phalcon-project/invo
+	url = https://github.com/phalcon/invo.git
+	branch = 0.6.x
