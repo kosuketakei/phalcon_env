@@ -11,6 +11,8 @@ services:
             - ./config/default.conf:/etc/nginx/conf.d/default.conf
             - ${WEB_DOCUMENT_DIR}:/var/www/practice
             - ./devtools/composer.json:/devtools/composer.json
+            - ./config/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+        command: ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
         tty: true
         networks:
             default: #ネットワーク名
