@@ -14,9 +14,7 @@ services:
             - ./config/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
         command: ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
         tty: true
-        networks:
-            default: #ネットワーク名
-                ipv4_address: 172.24.0.2
+        container_name: alpine-nginx
     
     mysql:
         image: mysql:8.0
@@ -30,15 +28,4 @@ services:
             - ./mysql:/var/lib/mysql
         ports:
             - 3306:3306
-        networks:
-            default: #ネットワーク名
-                ipv4_address: 172.24.0.3
-        
-
-networks: #ネットワークの作成
-    default: #ネットワーク名
-        driver: bridge
-        ipam:
-         driver: default
-         config:
-            - subnet: 172.24.0.0/16
+        container_name: db_host
