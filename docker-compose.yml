@@ -6,10 +6,10 @@ services:
             - "80:80"
         volumes: 
             - ./config/nginx.conf:/etc/nginx/nginx.conf
-            - ./config/www.conf:/etc/php7/php-fpm.d/www.conf
+            - ./config/sub.conf:/etc/php7/php-fpm.d/sub.conf
             - ./config/php.ini:/etc/php7/conf.d/php.ini
             - ./config/default.conf:/etc/nginx/conf.d/default.conf
-            - ${WEB_DOCUMENT_DIR}:/var/www/practice
+            - ${WEB_DOCUMENT_DIR}:/var/www/invo
             - ./devtools/composer.json:/devtools/composer.json
             - ./config/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
         command: ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

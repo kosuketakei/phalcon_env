@@ -8,6 +8,9 @@ RUN touch /run/openrc/softlevel
 #php拡張
 RUN apk add php7-mysqli php7-pdo_mysql php7-tokenizer php7-session
 
+#php-fpmの設定
+RUN echo "include=/etc/php7/php-fpm.d/sub.conf" >> /etc/php7/php-fpm.d/www.conf
+
 #phalconのインストール
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.11/community" >> /etc/apk/repositories
 RUN apk update
