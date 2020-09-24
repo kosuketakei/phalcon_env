@@ -1,8 +1,9 @@
 FROM alpine:3.12.0
 #alpine用の環境設定
-#RUN apk update
+RUN apk update
 RUN apk add nginx php7 php7-fpm composer git bash vim curl lsof supervisor
-
+#nginx.pidの場所
+RUN mkdir /run/nginx
 #php拡張
 RUN apk add php7-mysqli php7-pdo_mysql php7-tokenizer php7-session
 

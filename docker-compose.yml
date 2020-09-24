@@ -9,10 +9,11 @@ services:
             - ./config/sub.conf:/etc/php7/php-fpm.d/sub.conf
             - ./config/php.ini:/etc/php7/conf.d/php.ini
             - ./config/default.conf:/etc/nginx/conf.d/default.conf
-            - ${WEB_DOCUMENT_DIR}:/var/www/invo
+            - ${WEB_DOCUMENT_DIR}:/var/www/practice
             - ./devtools/composer.json:/devtools/composer.json
             - ./config/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
         command: ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+        stdin_open: true
         tty: true
         container_name: alpine-nginx
     
